@@ -27,10 +27,10 @@ Daripada membeli router enterprise mahal, solusi terbaik adalah **memecah beban 
 
 <p align="center">
   <a href="assets/topologi_distribusi_zero_cost_hd.png">
-    <img src="assets/topologi_distribusi_zero_cost_hd.png" alt="Gambar 5: Topologi Distribusi Zero Cost" width="750"/>
+    <img src="assets/topologi_distribusi_zero_cost_hd.png" alt="Gambar 5: Topologi Distribusi Zero Cost" width="100%"/>
   </a>
   <br>
-  <em><b>Gambar 5:</b> Topologi Distribusi Zero Cost SMK Informatika Pasundan (Klik gambar untuk resolusi tinggi)</em>
+  <em><b>Gambar 5:</b> Topologi Distribusi Zero-Cost SMK Informatika Pasundan (Klik gambar untuk resolusi 8K Ultra-HD • Tersedia format vektor <a href="assets/topologi_distribusi_zero_cost.svg"><b>SVG</b></a>)</em>
 </p>
 
 ### Diagram Detail Alur Logis Jaringan:
