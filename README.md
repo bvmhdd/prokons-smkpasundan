@@ -21,17 +21,20 @@ Berdasarkan audit infrastruktur jaringan di SMK Informatika Pasundan:
 
 ---
 
-## 💡 2. Solusi: Arsitektur Distribusi Zero-Cost (Gambar 5 Laporan)
+## 💡 2. Solusi: Arsitektur Distribusi 5-Router Zero-Cost (Gambar 5 Laporan)
 
 Daripada membeli router enterprise mahal, solusi terbaik adalah **memecah beban komputasi jaringan** menggunakan aset router idle yang sudah dimiliki sekolah:
 
 <p align="center">
-  <img src="assets/topologi_distribusi_zero_cost.png" alt="Gambar 5 Topologi Distribusi Zero Cost" width="550"/>
+  <a href="assets/topologi_distribusi_zero_cost_hd.png">
+    <img src="assets/topologi_distribusi_zero_cost_hd.png" alt="Gambar 5: Topologi Distribusi Zero Cost" width="750"/>
+  </a>
   <br>
-  <em><b>Gambar 5:</b> Topologi Distribusi Zero Cost (Logika Pemecahan Beban Multi-Router)</em>
+  <em><b>Gambar 5:</b> Topologi Distribusi Zero Cost SMK Informatika Pasundan (Klik gambar untuk resolusi tinggi)</em>
 </p>
 
 ### Diagram Detail Alur Logis Jaringan:
+
 ```mermaid
 flowchart TD
     %% Internet & Core
