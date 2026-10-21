@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1700 950" width="1700" height="950" font-family="Segoe UI, Inter, Arial, sans-serif">
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.14"/>
+    </filter>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F8FAFC"/>
+    </linearGradient>
+    <linearGradient id="headTKA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#B91C1C"/>
+      <stop offset="1" stop-color="#7F1D1D"/>
+    </linearGradient>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#64748B"/>
+    </marker>
+    <marker id="arrSpine" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#0F172A"/>
+    </marker>
+    <style>
+      .title { font-size: 26px; font-weight: 700; fill: #0F172A; }
+      .subtitle { font-size: 14px; fill: #475569; }
+      .spine { stroke: #0F172A; stroke-width: 5; fill: none; }
+      .bone { stroke-width: 3.5; fill: none; }
+      .sub { stroke: #94A3B8; stroke-width: 1.5; fill: none; }
+      .cause { font-size: 12.5px; fill: #1E293B; }
+      .code { font-weight: 700; fill: #DC2626; }
+      .q { font-style: italic; fill: #B45309; }
+      .cat { font-size: 14px; font-weight: 700; fill: #FFFFFF; letter-spacing: 0.5px; }
+      .cat-s { font-size: 11.5px; fill: #FFFFFF; opacity: 0.9; }
+      .t { font-size: 12.5px; fill: #334155; }
+      .t-b { font-size: 13.5px; font-weight: 700; fill: #0F172A; }
+    </style>
+  </defs>
+
+  <rect width="1700" height="950" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="40" y="46" class="title">Analisis Akar Masalah Khusus Prioritas TKA — Diagram Fishbone</text>
+  <text x="40" y="72" class="subtitle">Fokus: Keberhasilan Pelaksanaan Tes Kemampuan Akademik (2 Lab / 80–84 PC) • SMK Informatika Pasundan</text>
+
+  <!-- ===================== SPINE ===================== -->
+  <path d="M80,490 L1322,490" class="spine" marker-end="url(#arrSpine)"/>
+  <path d="M40,450 L80,490 L40,530 Z" fill="#0F172A"/>
+
+  <!-- ===================== HEAD (PROBLEM) ===================== -->
+  <path d="M1330,385 L1570,385 Q1690,490 1570,595 L1330,595 Z" fill="url(#headTKA)" filter="url(#shadow)"/>
+  <text x="1475" y="425" text-anchor="middle" font-size="12" font-weight="700" fill="#FECACA" letter-spacing="1">RISIKO KRITIS</text>
+  <text x="1475" y="455" text-anchor="middle" font-size="20" font-weight="700" fill="#FFFFFF">Kegagalan / Gangguan</text>
+  <text x="1475" y="480" text-anchor="middle" font-size="18" font-weight="700" fill="#FFFFFF">Pelaksanaan TKA</text>
+  <text x="1475" y="505" text-anchor="middle" font-size="13" font-weight="600" fill="#FEE2E2">Simultan 2 Lab (80–84 PC)</text>
+  <text x="1475" y="535" text-anchor="middle" font-size="11" fill="#FEE2E2">Client Freeze • Timeout CBT •</text>
+  <text x="1475" y="552" text-anchor="middle" font-size="11" fill="#FEE2E2">Gagal Sinkronisasi Server Proktor •</text>
+  <text x="1475" y="569" text-anchor="middle" font-size="11" fill="#FEE2E2">Sesi Peserta Terputus</text>
+
+  <!-- ===================== BONES ===================== -->
+  <!-- Top bones -->
+  <path d="M520,490 L350,170" class="bone" stroke="#B91C1C"/>
+  <path d="M900,490 L730,170" class="bone" stroke="#0284C7"/>
+  <path d="M1280,490 L1110,170" class="bone" stroke="#4F46E5"/>
+  <!-- Bottom bones -->
+  <path d="M520,490 L350,810" class="bone" stroke="#D97706"/>
+  <path d="M900,490 L730,810" class="bone" stroke="#059669"/>
+  <path d="M1280,490 L1110,810" class="bone" stroke="#64748B"/>
+
+  <!-- ===================== CATEGORY LABELS ===================== -->
+  <rect x="235" y="108" width="230" height="52" rx="12" fill="#B91C1C" filter="url(#shadow)"/>
+  <text x="350" y="131" text-anchor="middle" class="cat">BANDWIDTH &amp; QOS</text>
+  <text x="350" y="149" text-anchor="middle" class="cat-s">Throughput &amp; Priority</text>
+
+  <rect x="615" y="108" width="230" height="52" rx="12" fill="#0284C7" filter="url(#shadow)"/>
+  <text x="730" y="131" text-anchor="middle" class="cat">ROUTER &amp; GATEWAY</text>
+  <text x="730" y="149" text-anchor="middle" class="cat-s">Core Hardware Capacity</text>
+
+  <rect x="995" y="108" width="230" height="52" rx="12" fill="#4F46E5" filter="url(#shadow)"/>
+  <text x="1110" y="131" text-anchor="middle" class="cat">ARSITEKTUR &amp; ISOLASI</text>
+  <text x="1110" y="149" text-anchor="middle" class="cat-s">Network Segmentation</text>
+
+  <rect x="235" y="820" width="230" height="52" rx="12" fill="#D97706" filter="url(#shadow)"/>
+  <text x="350" y="843" text-anchor="middle" class="cat">INFRASTRUKTUR LAB</text>
+  <text x="350" y="861" text-anchor="middle" class="cat-s">Switch, Hub &amp; Kabel UTP</text>
+
+  <rect x="615" y="820" width="230" height="52" rx="12" fill="#059669" filter="url(#shadow)"/>
+  <text x="730" y="843" text-anchor="middle" class="cat">ENDPOINT &amp; SERVER TKA</text>
+  <text x="730" y="861" text-anchor="middle" class="cat-s">PC Client &amp; Proktor</text>
+
+  <rect x="995" y="820" width="230" height="52" rx="12" fill="#64748B" filter="url(#shadow)"/>
+  <text x="1110" y="843" text-anchor="middle" class="cat">SOP &amp; KESIAPAN OPERASIONAL</text>
+  <text x="1110" y="861" text-anchor="middle" class="cat-s">Procedure &amp; Contingency</text>
+
+  <!-- ===================== CAUSES: BANDWIDTH & QOS ===================== -->
+  <path d="M126,210 H369" class="sub" marker-end="url(#arr)"/>
+  <text x="359" y="204" text-anchor="end" class="cause">Trafik umum (BYOD/video) memakan kuota TKA <tspan class="code">R1</tspan></text>
+  <path d="M155,265 H398" class="sub" marker-end="url(#arr)"/>
+  <text x="388" y="259" text-anchor="end" class="cause">Alokasi Lab digabung di Queue Atas 50 Mbps <tspan class="code">R2</tspan></text>
+  <path d="M185,320 H428" class="sub" marker-end="url(#arr)"/>
+  <text x="418" y="314" text-anchor="end" class="cause">Belum ada profil Queue khusus "Hari H TKA" <tspan class="code">R3</tspan></text>
+  <path d="M214,375 H457" class="sub" marker-end="url(#arr)"/>
+  <text x="447" y="369" text-anchor="end" class="cause">Lonjakan latensi &gt; 150ms saat upload jawaban <tspan class="code">R4</tspan></text>
+  <path d="M243,430 H486" class="sub" marker-end="url(#arr)"/>
+  <text x="476" y="424" text-anchor="end" class="cause">Tanpa jaminan CIR (limit-at) untuk CBT <tspan class="code">R5</tspan></text>
+
+  <!-- ===================== CAUSES: ROUTER & GATEWAY ===================== -->
+  <path d="M506,210 H749" class="sub" marker-end="url(#arr)"/>
+  <text x="739" y="204" text-anchor="end" class="cause">Router hAP lite CPU 100% menangani 84 PC <tspan class="code">R6</tspan></text>
+  <path d="M535,265 H778" class="sub" marker-end="url(#arr)"/>
+  <text x="768" y="259" text-anchor="end" class="cause">RAM 32 MB rawan kehabisan Conntrack Table <tspan class="code">R7</tspan></text>
+  <path d="M565,320 H808" class="sub" marker-end="url(#arr)"/>
+  <text x="798" y="314" text-anchor="end" class="cause">Port 10/100 Mbps jadi bottleneck aggregate <tspan class="code">R8</tspan></text>
+  <path d="M594,375 H837" class="sub" marker-end="url(#arr)"/>
+  <text x="827" y="369" text-anchor="end" class="cause"><tspan class="q">20 Router hAP lite cadangan belum dimanfaatkan</tspan></text>
+  <path d="M623,430 H866" class="sub" marker-end="url(#arr)"/>
+  <text x="856" y="424" text-anchor="end" class="cause">Firewall/DNS cache MikroTik overload saat serentak</text>
+
+  <!-- ===================== CAUSES: ARSITEKTUR & ISOLASI ===================== -->
+  <path d="M886,210 H1129" class="sub" marker-end="url(#arr)"/>
+  <text x="1119" y="204" text-anchor="end" class="cause">Tidak ada isolasi VLAN: broadcast domain bercampur <tspan class="code">R9</tspan></text>
+  <path d="M915,265 H1158" class="sub" marker-end="url(#arr)"/>
+  <text x="1148" y="259" text-anchor="end" class="cause">DHCP pool Lab bercampur dengan WiFi siswa/tamu</text>
+  <path d="M945,320 H1188" class="sub" marker-end="url(#arr)"/>
+  <text x="1178" y="314" text-anchor="end" class="cause">Looping jaringan dari kabel lab menjatuhkan core</text>
+  <path d="M974,375 H1217" class="sub" marker-end="url(#arr)"/>
+  <text x="1207" y="369" text-anchor="end" class="cause">DNS timeout karena tidak diarahkan ke DNS ISP lokal</text>
+  <path d="M1003,430 H1246" class="sub" marker-end="url(#arr)"/>
+  <text x="1236" y="424" text-anchor="end" class="cause">Single Gateway: jika router hAP lite mati, TKA lumpuh</text>
+
+  <!-- ===================== CAUSES: INFRASTRUKTUR LAB ===================== -->
+  <path d="M243,550 H486" class="sub" marker-end="url(#arr)"/>
+  <text x="476" y="544" text-anchor="end" class="cause">Kabel Lab melalui Hub 8 port (Collision!) <tspan class="code">R10</tspan></text>
+  <path d="M214,605 H457" class="sub" marker-end="url(#arr)"/>
+  <text x="447" y="599" text-anchor="end" class="cause">Switch TP-Link 16p di-cascade berlebihan &gt; 3 tingkat</text>
+  <path d="M185,660 H428" class="sub" marker-end="url(#arr)"/>
+  <text x="418" y="654" text-anchor="end" class="cause">Kabel patch cord RJ45 kendor / pin 4-5-7-8 putus (10 Mbps)</text>
+  <path d="M155,715 H398" class="sub" marker-end="url(#arr)"/>
+  <text x="388" y="709" text-anchor="end" class="cause">Ketiadaan label nomor kabel memperlambat isolasi masalah</text>
+  <path d="M126,770 H369" class="sub" marker-end="url(#arr)"/>
+  <text x="359" y="764" text-anchor="end" class="cause">Terminal listrik PC Lab goyang memicu restart massal</text>
+
+  <!-- ===================== CAUSES: ENDPOINT & SERVER TKA ===================== -->
+  <path d="M623,550 H866" class="sub" marker-end="url(#arr)"/>
+  <text x="856" y="544" text-anchor="end" class="cause">Windows Update otomatis aktif serentak di 80 PC <tspan class="code">R11</tspan></text>
+  <path d="M594,605 H837" class="sub" marker-end="url(#arr)"/>
+  <text x="827" y="599" text-anchor="end" class="cause">Spesifikasi NIC PC Lab negosiasi turun ke 10 Mbps</text>
+  <path d="M565,660 H808" class="sub" marker-end="url(#arr)"/>
+  <text x="798" y="654" text-anchor="end" class="cause">Server Proktor lokal CPU/Disk I/O 100% (Semi-online)</text>
+  <path d="M535,715 H778" class="sub" marker-end="url(#arr)"/>
+  <text x="768" y="709" text-anchor="end" class="cause">Antivirus client memblokir aplikasi exam browser</text>
+  <path d="M506,770 H749" class="sub" marker-end="url(#arr)"/>
+  <text x="739" y="764" text-anchor="end" class="cause">IP statis tabrakan dengan IP DHCP yang dibagikan router</text>
+
+  <!-- ===================== CAUSES: SOP & OPERASIONAL ===================== -->
+  <path d="M1003,550 H1246" class="sub" marker-end="url(#arr)"/>
+  <text x="1236" y="544" text-anchor="end" class="cause">Belum ada gladi bersih serentak beban penuh 84 PC</text>
+  <path d="M974,605 H1217" class="sub" marker-end="url(#arr)"/>
+  <text x="1207" y="599" text-anchor="end" class="cause">Ketiadaan modem backup 4G/tethering darurat Proktor</text>
+  <path d="M945,660 H1188" class="sub" marker-end="url(#arr)"/>
+  <text x="1178" y="654" text-anchor="end" class="cause">Tidak ada sakelar isolasi WiFi siswa saat ujian berlangsung</text>
+  <path d="M915,715 H1158" class="sub" marker-end="url(#arr)"/>
+  <text x="1148" y="709" text-anchor="end" class="cause">Tidak ada kontak darurat NOC ISP Fibernet saat event</text>
+  <path d="M886,770 H1129" class="sub" marker-end="url(#arr)"/>
+  <text x="1119" y="764" text-anchor="end" class="cause">Tanpa cadangan UPS pada Switch Lab dan Router Core</text>
+
+  <!-- ===================== LEGEND ===================== -->
+  <rect x="1330" y="635" width="330" height="235" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="1350" y="662" class="t-b">Kunci Mitigasi TKA</text>
+  <text x="1350" y="688" class="t"><tspan class="code">R1–R5</tspan> : Aktifkan "Mode TKA" di Queue Tree</text>
+  <text x="1350" y="710" class="t"><tspan class="code">R6–R8</tspan> : Manfaatkan Router MikroTik #2 khusus Lab</text>
+  <text x="1350" y="732" class="t"><tspan class="code">R9–R10</tspan>: Pisahkan Port &amp; Singkirkan Hub 8p dari Lab</text>
+  <text x="1350" y="754" class="t"><tspan class="code">R11</tspan>   : Matikan Windows Update &amp; Background Task</text>
+  <line x1="1350" y1="772" x2="1640" y2="772" stroke="#E2E8F0"/>
+  <text x="1350" y="796" font-size="12" font-weight="700" fill="#15803D">Target SLA TKA:</text>
+  <text x="1350" y="818" font-size="11.5" fill="#475569">• Jaminan Bandwidth: 70–80 Mbps Dedicated</text>
+  <text x="1350" y="836" font-size="11.5" fill="#475569">• Ping ke Gateway: &lt; 2 ms • Ke Pusat: &lt; 30 ms</text>
+  <text x="1350" y="854" font-size="11.5" fill="#475569">• Packet Loss: 0% di segmen Lab</text>
+</svg>

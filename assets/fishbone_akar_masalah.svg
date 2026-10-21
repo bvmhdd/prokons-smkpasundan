@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1700 950" width="1700" height="950" font-family="Segoe UI, Inter, Arial, sans-serif">
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.14"/>
+    </filter>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <linearGradient id="head" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#DC2626"/>
+      <stop offset="1" stop-color="#991B1B"/>
+    </linearGradient>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#64748B"/>
+    </marker>
+    <marker id="arrSpine" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#0F172A"/>
+    </marker>
+    <style>
+      .title { font-size: 26px; font-weight: 700; fill: #0F172A; }
+      .subtitle { font-size: 14px; fill: #475569; }
+      .spine { stroke: #0F172A; stroke-width: 5; fill: none; }
+      .bone { stroke-width: 3.5; fill: none; }
+      .sub { stroke: #94A3B8; stroke-width: 1.5; fill: none; }
+      .cause { font-size: 12.5px; fill: #1E293B; }
+      .code { font-weight: 700; fill: #DC2626; }
+      .q { font-style: italic; fill: #92400E; }
+      .cat { font-size: 14px; font-weight: 700; fill: #FFFFFF; letter-spacing: 0.5px; }
+      .cat-s { font-size: 11.5px; fill: #FFFFFF; opacity: 0.9; }
+      .t { font-size: 12.5px; fill: #334155; }
+      .t-b { font-size: 13.5px; font-weight: 700; fill: #0F172A; }
+    </style>
+  </defs>
+
+  <rect width="1700" height="950" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="40" y="46" class="title">Analisis Akar Masalah — Diagram Fishbone (Ishikawa)</text>
+  <text x="40" y="72" class="subtitle">Network Assessment &amp; Optimization • SMK Informatika Pasundan • Kode merah (Hx) = hipotesis yang akan diuji • Draf v1.0</text>
+
+  <!-- ===================== SPINE ===================== -->
+  <path d="M80,490 L1322,490" class="spine" marker-end="url(#arrSpine)"/>
+  <!-- tail -->
+  <path d="M40,450 L80,490 L40,530 Z" fill="#0F172A"/>
+
+  <!-- ===================== HEAD (PROBLEM) ===================== -->
+  <path d="M1330,395 L1555,395 Q1690,490 1555,585 L1330,585 Z" fill="url(#head)" filter="url(#shadow)"/>
+  <text x="1470" y="440" text-anchor="middle" font-size="12" font-weight="700" fill="#FECACA" letter-spacing="1">MASALAH UTAMA</text>
+  <text x="1470" y="470" text-anchor="middle" font-size="20" font-weight="700" fill="#FFFFFF">WiFi Tidak Stabil</text>
+  <text x="1470" y="494" text-anchor="middle" font-size="15" font-weight="600" fill="#FFFFFF">pada Jam Sibuk</text>
+  <text x="1470" y="517" text-anchor="middle" font-size="12.5" fill="#FEE2E2">08.00 – 13.00 • Senin – Kamis</text>
+  <text x="1470" y="545" text-anchor="middle" font-size="11" fill="#FEE2E2">Connected tanpa akses • Logout sendiri</text>
+  <text x="1470" y="561" text-anchor="middle" font-size="11" fill="#FEE2E2">Buffering</text>
+
+  <!-- ===================== BONES ===================== -->
+  <!-- Top bones: (xs,490) -> (xs-170,170) -->
+  <path d="M520,490 L350,170" class="bone" stroke="#4F46E5"/>
+  <path d="M900,490 L730,170" class="bone" stroke="#0891B2"/>
+  <path d="M1280,490 L1110,170" class="bone" stroke="#475569"/>
+  <!-- Bottom bones: (xs,490) -> (xs-170,810) -->
+  <path d="M520,490 L350,810" class="bone" stroke="#7C3AED"/>
+  <path d="M900,490 L730,810" class="bone" stroke="#D97706"/>
+  <path d="M1280,490 L1110,810" class="bone" stroke="#EA580C"/>
+
+  <!-- ===================== CATEGORY LABELS ===================== -->
+  <rect x="235" y="108" width="230" height="52" rx="12" fill="#4F46E5" filter="url(#shadow)"/>
+  <text x="350" y="131" text-anchor="middle" class="cat">PERANGKAT</text>
+  <text x="350" y="149" text-anchor="middle" class="cat-s">Machine</text>
+
+  <rect x="615" y="108" width="230" height="52" rx="12" fill="#0891B2" filter="url(#shadow)"/>
+  <text x="730" y="131" text-anchor="middle" class="cat">KONFIGURASI</text>
+  <text x="730" y="149" text-anchor="middle" class="cat-s">Method</text>
+
+  <rect x="995" y="108" width="230" height="52" rx="12" fill="#475569" filter="url(#shadow)"/>
+  <text x="1110" y="131" text-anchor="middle" class="cat">MANAJEMEN</text>
+  <text x="1110" y="149" text-anchor="middle" class="cat-s">Management</text>
+
+  <rect x="235" y="820" width="230" height="52" rx="12" fill="#7C3AED" filter="url(#shadow)"/>
+  <text x="350" y="843" text-anchor="middle" class="cat">LINGKUNGAN</text>
+  <text x="350" y="861" text-anchor="middle" class="cat-s">Environment</text>
+
+  <rect x="615" y="820" width="230" height="52" rx="12" fill="#D97706" filter="url(#shadow)"/>
+  <text x="730" y="843" text-anchor="middle" class="cat">PENGGUNA</text>
+  <text x="730" y="861" text-anchor="middle" class="cat-s">Man</text>
+
+  <rect x="995" y="820" width="230" height="52" rx="12" fill="#EA580C" filter="url(#shadow)"/>
+  <text x="1110" y="843" text-anchor="middle" class="cat">INFRASTRUKTUR FISIK</text>
+  <text x="1110" y="861" text-anchor="middle" class="cat-s">Material</text>
+
+  <!-- ===================== CAUSES: PERANGKAT (xs=520, top) ===================== -->
+  <path d="M126,210 H369" class="sub" marker-end="url(#arr)"/>
+  <text x="359" y="204" text-anchor="end" class="cause">Router hAP lite CPU 650 MHz <tspan class="code">H1</tspan></text>
+  <path d="M155,265 H398" class="sub" marker-end="url(#arr)"/>
+  <text x="388" y="259" text-anchor="end" class="cause">RAM 32 MB, conntrack penuh <tspan class="code">H1</tspan></text>
+  <path d="M185,320 H428" class="sub" marker-end="url(#arr)"/>
+  <text x="418" y="314" text-anchor="end" class="cause">Port router hanya 10/100 Mbps <tspan class="code">H1</tspan></text>
+  <path d="M214,375 H457" class="sub" marker-end="url(#arr)"/>
+  <text x="447" y="369" text-anchor="end" class="cause">AP consumer, kapasitas klien kecil <tspan class="code">H3</tspan></text>
+  <path d="M243,430 H486" class="sub" marker-end="url(#arr)"/>
+  <text x="476" y="424" text-anchor="end" class="cause">AP campur merek, tanpa roaming <tspan class="code">H3</tspan></text>
+
+  <!-- ===================== CAUSES: KONFIGURASI (xs=900, top) ===================== -->
+  <path d="M506,210 H749" class="sub" marker-end="url(#arr)"/>
+  <text x="739" y="204" text-anchor="end" class="cause">Queue total 100%, tanpa headroom <tspan class="code">H7</tspan></text>
+  <path d="M535,265 H778" class="sub" marker-end="url(#arr)"/>
+  <text x="768" y="259" text-anchor="end" class="cause">Tidak ada borrowing antar-queue <tspan class="code">H7</tspan></text>
+  <path d="M565,320 H808" class="sub" marker-end="url(#arr)"/>
+  <text x="798" y="314" text-anchor="end" class="cause">Tanpa PCQ / fairness per-user <tspan class="code">H5</tspan></text>
+  <path d="M594,375 H837" class="sub" marker-end="url(#arr)"/>
+  <text x="827" y="369" text-anchor="end" class="cause"><tspan class="q">DHCP pool habis / lease lama?</tspan> <tspan class="code">H2</tspan></text>
+  <path d="M623,430 H866" class="sub" marker-end="url(#arr)"/>
+  <text x="856" y="424" text-anchor="end" class="cause"><tspan class="q">AP mode router / double NAT?</tspan> <tspan class="code">H6</tspan></text>
+
+  <!-- ===================== CAUSES: MANAJEMEN (xs=1280, top) ===================== -->
+  <path d="M886,210 H1129" class="sub" marker-end="url(#arr)"/>
+  <text x="1119" y="204" text-anchor="end" class="cause">Belum ada monitoring trafik</text>
+  <path d="M915,265 H1158" class="sub" marker-end="url(#arr)"/>
+  <text x="1148" y="259" text-anchor="end" class="cause">Tidak ada segmentasi VLAN/subnet</text>
+  <path d="M945,320 H1188" class="sub" marker-end="url(#arr)"/>
+  <text x="1178" y="314" text-anchor="end" class="cause">Topologi belum terdokumentasi</text>
+  <path d="M974,375 H1217" class="sub" marker-end="url(#arr)"/>
+  <text x="1207" y="369" text-anchor="end" class="cause">5 AP &amp; 20 router idle tak terpakai</text>
+  <path d="M1003,430 H1246" class="sub" marker-end="url(#arr)"/>
+  <text x="1236" y="424" text-anchor="end" class="cause">Tanpa link ISP cadangan</text>
+
+  <!-- ===================== CAUSES: LINGKUNGAN (xs=520, bottom) ===================== -->
+  <path d="M243,550 H486" class="sub" marker-end="url(#arr)"/>
+  <text x="476" y="544" text-anchor="end" class="cause">Interferensi band 2.4 GHz <tspan class="code">H4</tspan></text>
+  <path d="M214,605 H457" class="sub" marker-end="url(#arr)"/>
+  <text x="447" y="599" text-anchor="end" class="cause">Channel antar-AP overlap <tspan class="code">H4</tspan></text>
+  <path d="M185,660 H428" class="sub" marker-end="url(#arr)"/>
+  <text x="418" y="654" text-anchor="end" class="cause">Dinding &amp; jarak, sinyal lemah <tspan class="code">H4</tspan></text>
+  <path d="M155,715 H398" class="sub" marker-end="url(#arr)"/>
+  <text x="388" y="709" text-anchor="end" class="cause">Coverage antar-area tidak merata <tspan class="code">H4</tspan></text>
+  <path d="M126,770 H369" class="sub" marker-end="url(#arr)"/>
+  <text x="359" y="764" text-anchor="end" class="cause">Hanya 2.4 GHz, tanpa 5 GHz <tspan class="code">H4</tspan></text>
+
+  <!-- ===================== CAUSES: PENGGUNA (xs=900, bottom) ===================== -->
+  <path d="M623,550 H866" class="sub" marker-end="url(#arr)"/>
+  <text x="856" y="544" text-anchor="end" class="cause">Jumlah device melonjak jam sibuk <tspan class="code">H3</tspan></text>
+  <path d="M594,605 H837" class="sub" marker-end="url(#arr)"/>
+  <text x="827" y="599" text-anchor="end" class="cause">2 lab aktif bersamaan (±80 PC)</text>
+  <path d="M565,660 H808" class="sub" marker-end="url(#arr)"/>
+  <text x="798" y="654" text-anchor="end" class="cause">Streaming / download berat <tspan class="code">H5</tspan></text>
+  <path d="M535,715 H778" class="sub" marker-end="url(#arr)"/>
+  <text x="768" y="709" text-anchor="end" class="cause">BYOD siswa tanpa batas per-user <tspan class="code">H5</tspan></text>
+  <path d="M506,770 H749" class="sub" marker-end="url(#arr)"/>
+  <text x="739" y="764" text-anchor="end" class="cause">Kebutuhan TKA belum diprioritaskan</text>
+
+  <!-- ===================== CAUSES: INFRASTRUKTUR FISIK (xs=1280, bottom) ===================== -->
+  <path d="M1003,550 H1246" class="sub" marker-end="url(#arr)"/>
+  <text x="1236" y="544" text-anchor="end" class="cause"><tspan class="q">Hub half-duplex (bukan switch)?</tspan> <tspan class="code">H8</tspan></text>
+  <path d="M974,605 H1217" class="sub" marker-end="url(#arr)"/>
+  <text x="1207" y="599" text-anchor="end" class="cause"><tspan class="q">Kualitas / jenis kabel?</tspan> <tspan class="code">H8</tspan></text>
+  <path d="M945,660 H1188" class="sub" marker-end="url(#arr)"/>
+  <text x="1178" y="654" text-anchor="end" class="cause">Switch cascade bertingkat di lab <tspan class="code">H8</tspan></text>
+  <path d="M915,715 H1158" class="sub" marker-end="url(#arr)"/>
+  <text x="1148" y="709" text-anchor="end" class="cause">Single uplink per area <tspan class="code">H8</tspan></text>
+  <path d="M886,770 H1129" class="sub" marker-end="url(#arr)"/>
+  <text x="1119" y="764" text-anchor="end" class="cause"><tspan class="q">Catu daya / panas, AP restart?</tspan> <tspan class="code">H3</tspan></text>
+
+  <!-- ===================== LEGEND ===================== -->
+  <rect x="1330" y="625" width="330" height="247" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="1350" y="652" class="t-b">Keterangan</text>
+  <text x="1350" y="678" class="t"><tspan class="code" font-size="12.5">Hx</tspan> = kode hipotesis yang akan diuji</text>
+  <text x="1350" y="700" class="t"><tspan class="q">Teks miring + ?</tspan> = dugaan, perlu verifikasi</text>
+  <line x1="1350" y1="716" x2="1640" y2="716" stroke="#E2E8F0"/>
+  <text x="1350" y="738" font-size="11.5" fill="#475569">H1 Router overload</text>
+  <text x="1500" y="738" font-size="11.5" fill="#475569">H5 Fairness per-user</text>
+  <text x="1350" y="758" font-size="11.5" fill="#475569">H2 DHCP pool/lease</text>
+  <text x="1500" y="758" font-size="11.5" fill="#475569">H6 Konfigurasi AP</text>
+  <text x="1350" y="778" font-size="11.5" fill="#475569">H3 Klien per AP</text>
+  <text x="1500" y="778" font-size="11.5" fill="#475569">H7 Queue statis</text>
+  <text x="1350" y="798" font-size="11.5" fill="#475569">H4 Coverage/interferensi</text>
+  <text x="1500" y="798" font-size="11.5" fill="#475569">H8 Lapisan fisik</text>
+  <line x1="1350" y1="814" x2="1640" y2="814" stroke="#E2E8F0"/>
+  <text x="1350" y="836" font-size="11.5" font-weight="700" fill="#15803D">Kontrol (H0):</text>
+  <text x="1350" y="855" font-size="11.5" fill="#475569">Kabel langsung dari Switch ISP normal</text>
+</svg>

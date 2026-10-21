@@ -1,0 +1,36 @@
+# ==============================================================================
+# .gitignore: Proyek Konsultansi Jaringan SMK Informatika Pasundan
+# ==============================================================================
+
+# 1. Virtual Machine Disk Images & Heavy Files (> 100 MB GitHub Limit)
+CHR/
+*.img
+*.zip
+*.qcow2
+*.vmdk
+*.vdi
+*.iso
+
+# 2. Microsoft Word HTML Export Folders & Lock Files
+*_files/
+~$*.doc*
+~$*.xls*
+~$*.ppt*
+
+# 3. Windows OS & System Files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# 4. GNS3 Simulation Captures & Temporary Files
+*.pcap
+*.pcapng
+*.cap
+*.log
+
+# 5. Local IDE & Editor Settings
+.vscode/
+.idea/
+*.swp
+*.swo
