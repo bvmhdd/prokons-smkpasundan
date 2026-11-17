@@ -47,15 +47,15 @@ Setelah router menyala kembali:
 ## 3. Skema Pengkabelan Fisik (Physical Cable Layout)
 
 ### A. Pada `R1-CORE-ROUTER`
-- **Port 1 (`ether1`):** Kabel dari Modem ISP Fibernet 100 Mbps.
-- **Port 2 (`ether2`):** Kabel ke **Port 1** Switch Utama 16-Port Gigabit TP-Link.
+- **Port 1 (`ether1`):** Kabel dari Router ISP Port 2 (WAN Internet).
+- **Port 2 (`ether2`):** Kabel ke **Port 23** Gigabit Core Switch (Uplink Backbone Distribusi `10.10.10.1`).
 - **Port 3 (`ether3`):** Port maintenance teknisi (IP: `192.168.88.1`).
 
 ### B. Pada `R2-TKA-GATEWAY` (VVIP Ujian CBT)
-- **Port 1 (`ether1`):** Kabel VIP (Kabel 9) langsung dari **Port 9** Switch Utama.
-- **Port 2 (`ether2`):** Kabel ke Switch Gigabit Lab TJKT (42 PC Siswa).
-- **Port 3 (`ether3`):** Kabel ke Switch Gigabit Lab MP (40 PC Siswa).
-- **Port 4 (`ether4`):** Kabel ke Switch Ruang Server / PC Proktor.
+- **Port 1 (`ether1`):** Kabel dari Switch Ruang Guru / Core Switch (Uplink Backbone VIP `10.10.10.2`).
+- **Port 2 (`ether2`):** Kabel ke Switch Lab TKA / Lab MP (Distribusi langsung ke 84 PC Peserta Ujian & Server Proktor).
+- **Port 3 (`ether3`):** Port Cadangan / Opsional Proktor Langsung.
+- **Port 4 (`ether4`):** Port Cadangan / Maintenance Teknisi.
 
 ### C. Pada Router Bengkel (`R3-BENGKEL-TKJ`, `R4-BENGKEL-TBSM`, & `R5-BENGKEL-MP`)
 - **Port 1 (`ether1`):** Kabel dari Port 4 (TKJ), Port 5 (TBSM), atau Port 6 (MP) dari Switch Utama.
@@ -63,13 +63,32 @@ Setelah router menyala kembali:
 
 ---
 
-## 4. Standar Operasional Prosedur (SOP) Hari Ujian TKA
+## 4. Fitur Dual-Mode (Mode Ujian TKA vs Mode Harian Biasa)
+
+Seluruh router (`R1-CORE-ROUTER`, `R3-BENGKEL-TKJ`, dll.) telah dilengkapi dengan **Dual-Mode Switcher (1-Klik)** di menu Winbox:
+
+### Cara Mengubah Mode (Sangat Mudah):
+1. Buka Winbox router yang bersangkutan (misal `R1-CORE-ROUTER` atau `R3-BENGKEL-TKJ`).
+2. Masuk ke menu **System** > **Scripts**.
+3. Pilih salah satu script yang diinginkan:
+   * **`1-SET-MODE-TKA-PUSAT` / `1-MODE-TKA-AKTIF`** $\rightarrow$ Klik tombol **Run Script**:
+     - *Efek:* Bandwidth 75–80 Mbps otomatis dikunci penuh untuk Lab Ujian CBT.
+     - Bandwidth Bengkel dan Ruang Guru otomatis dibatasi ketat agar tidak mengganggu ujian.
+   * **`2-SET-MODE-HARIAN-PUSAT` / `2-MODE-HARIAN-AKTIF`** $\rightarrow$ Klik tombol **Run Script**:
+     - *Efek:* Bandwidth otomatis dibagi merata (Ruang Guru 50 Mbps, Bengkel 40 Mbps, Lab TKA 25 Mbps).
+     - Seluruh 25 PC di Bengkel dapat mengakses internet harian secara optimal dengan PCQ Fairness.
+
+---
+
+## 5. Standar Operasional Prosedur (SOP) Hari Ujian TKA
 
 1. **H-1 Hari Ujian:**
-   - Nyalakan seluruh PC Lab TJKT dan Lab MP.
-   - Pastikan seluruh 84 PC mendapatkan IP secara otomatis dari DHCP Server R2 (`192.168.20.x` dan `192.168.21.x`).
+   - Nyalakan seluruh PC peserta ujian dan PC Bengkel.
+   - Buka Winbox di `R1-CORE-ROUTER`, jalankan script `1-SET-MODE-TKA-PUSAT`.
+   - Pastikan seluruh 84 PC mendapatkan IP secara otomatis dari DHCP Server R2 (`192.168.20.x`).
    - Cek masa sewa IP (`Lease Time` = 3 hari).
 2. **Saat Sesi Ujian Berlangsung:**
-   - Buka Winbox di `R2-TKA-GATEWAY`, pantau menu **System** > **Resources**.
-   - Beban CPU hAP lite harus berada di kisaran aman **50%–75%**.
-   - Pantau menu **Queues** > **Queue Tree** di `R1-CORE-ROUTER`. Baris `Q-JALUR-VIP-TKA` harus mendapatkan prioritas penuh (minimal 75 Mbps).
+   - Buka Winbox di `R2-TKA-GATEWAY`, pantau menu **System** > **Resources**. Beban CPU harus di kisaran aman **50%–75%**.
+   - Pantau menu **Queues** di `R1-CORE-ROUTER`. Baris `Q-JALUR-VIP-TKA` harus mendapatkan prioritas penuh (minimal 75 Mbps).
+3. **Setelah Ujian Selesai (Kembali ke Harian):**
+   - Di `R1-CORE-ROUTER`, jalankan script `2-SET-MODE-HARIAN-PUSAT` agar koneksi internet Ruang Guru dan Bengkel kembali kencang seperti semula.
